@@ -33,3 +33,15 @@ output "targeting_db_endpoint" {
 output "redis_endpoint" {
   value = module.elasticache.redis_endpoint
 }
+
+output "dynamodb_table_name" {
+  value = module.dynamodb.table_name
+}
+
+output "sqs_queue_url" {
+  value = module.sqs.queue_url
+}
+
+output "ecr_repository_urls" {
+  value = module.ecr.repository_urls
+}

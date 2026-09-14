@@ -37,5 +37,18 @@ module "elasticache" {
   subnet_ids   = module.networking.public_subnet_ids
 }
 
-# Os módulos dynamodb, sqs e ecr serão adicionados
-# aqui nas próximas etapas.
+module "dynamodb" {
+  source = "./modules/dynamodb"
+
+  project_name = var.project_name
+}
+
+module "sqs" {
+  source = "./modules/sqs"
+
+  project_name = var.project_name
+}
+
+module "ecr" {
+  source = "./modules/ecr"
+}
