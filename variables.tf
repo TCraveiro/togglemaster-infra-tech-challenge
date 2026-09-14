@@ -45,3 +45,9 @@ variable "eks_node_instance_type" {
   type        = string
   default     = "t3.medium"
 }
+
+variable "master_password" {
+  description = "Senha mestra das 3 instâncias RDS. Defina via variável de ambiente TF_VAR_master_password - NUNCA commitar valor aqui."
+  type        = string
+  sensitive   = true
+}

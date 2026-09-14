@@ -17,3 +17,15 @@ output "eks_cluster_name" {
 output "eks_cluster_endpoint" {
   value = module.eks.cluster_endpoint
 }
+
+output "auth_db_endpoint" {
+  value = module.rds.auth_db_endpoint
+}
+
+output "flag_db_endpoint" {
+  value = module.rds.flag_db_endpoint
+}
+
+output "targeting_db_endpoint" {
+  value = module.rds.targeting_db_endpoint
+}

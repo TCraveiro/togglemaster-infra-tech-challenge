@@ -20,5 +20,14 @@ module "eks" {
   node_instance_type = var.eks_node_instance_type
 }
 
-# Os módulos rds, elasticache, dynamodb, sqs e ecr serão adicionados
+module "rds" {
+  source = "./modules/rds"
+
+  project_name    = var.project_name
+  vpc_id          = module.networking.vpc_id
+  subnet_ids      = module.networking.public_subnet_ids
+  master_password = var.master_password
+}
+
+# Os módulos elasticache, dynamodb, sqs e ecr serão adicionados
 # aqui nas próximas etapas.
