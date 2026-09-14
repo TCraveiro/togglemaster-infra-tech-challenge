@@ -29,3 +29,7 @@ output "flag_db_endpoint" {
 output "targeting_db_endpoint" {
   value = module.rds.targeting_db_endpoint
 }
+
+output "redis_endpoint" {
+  value = module.elasticache.redis_endpoint
+}
